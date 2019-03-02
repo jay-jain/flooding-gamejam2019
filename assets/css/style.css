@@ -1,0 +1,15 @@
+body{
+	background-image: url("../images/flooding_icon.png");
+	text-align: center;
+	/*background-color: gray;*/
+}
+
+.text-muted{
+	color: yellow;
+}
+.last-seconds{
+  color: red;
+}
+.option{
+  margin: 15px;
+}
