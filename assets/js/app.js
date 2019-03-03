@@ -124,13 +124,13 @@ var trivia = {
   nextQuestion : function(){
     
     // set timer to 20 seconds each question
-    trivia.timer = 10;
+    trivia.timer = 20;
     $('#timer').removeClass('last-seconds');
     $('#timer').text(trivia.timer);
     
     // to prevent timer speed up
     if(!trivia.timerOn){
-      trivia.timerId = setInterval(trivia.timerRunning, 1000);
+      trivia.timerId = setInterval(trivia.timerRunning, 2000);
     }
     
     // gets all the questions then indexes the current questions
