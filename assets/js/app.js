@@ -180,7 +180,13 @@ var trivia = {
         '<p>Correct: '+ trivia.correct +'</p>'+
         '<p>Incorrect: '+ trivia.incorrect +'</p>'+
         '<p>Unanswered: '+ trivia.unanswered +'</p>'+
-        '<p>Please play again!</p>');
+        '<p>Please play again!</p>'+
+        '<hr>'+
+        '<p>Sources:</p>'+
+        '<p>restorationmasterfinder.com</p>'+
+        '<p>dosomething.org/</p>'+
+        '<p>nationalgeographic.com/</p>'+
+        '<p>oxfordre.com/</p>');
       
       // hide game sction
       $('#game').hide();
