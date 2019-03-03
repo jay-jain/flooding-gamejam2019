@@ -1,5 +1,6 @@
 body{
 	background-image: url("../images/flooding_tab.png");
+	background-color: #cccccc;
 	text-align: center;
 	/*background-color: gray;*/
 }
@@ -13,3 +14,7 @@ body{
 .option{
   margin: 15px;
 }
+
+/*.container{
+	margin: 0 auto;	
+}*/
