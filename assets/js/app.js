@@ -145,7 +145,7 @@ var trivia = {
       $('#options').append($('<button class="option btn btn-info btn-lg">'+key+'</button>'));
     });
 
-    while(trivia.currentSet < 20){
+    if(trivia.currentSet < 19){
       $('#qnum').text('Question ' + (trivia.currentSet+1) +' / 19')   
     }
   },
