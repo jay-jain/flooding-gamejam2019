@@ -1,3 +1,5 @@
+// water fall animation https://codepen.io/visualcomposer/pen/PXPpWQ?page=1&
+
 $(document).ready(function(){
   
   // event listeners
@@ -25,7 +27,19 @@ var trivia = {
     q4: 'How much rapidly moving water can knock a person down?',
     q5: "Flooding is the most common natural disaster in the U.S.",
     q6: 'Over the past 30 years, flooding in the US has caused how much in damage on average every year? ',
-    q7: "How much moving water does it take to carry your car away?"
+    q7: "How much moving water does it take to carry your car away?",
+    q8: "Which states are safe from flooding?",
+    q9: "Flash floods can bring walls of water from ",
+    q10: "In preparation for a flood, it is important to stock up on ______,______, 3 gallons of water per person for 3 days, ______ radio for weather reports, extra batteries, personal ______ .",
+    q11: "Since flood damage is _____ covered by homeowners insurance, flood insurance is important for people living in high-risk flood zones.",
+    q12: "If your skin comes in contact with flood water, make sure to wash it with __________ because the contents are unknown.",
+    q13: "Communities, particularly at risk, are those located in ",
+    q14: "Standing flood water could be electrically charged and very dangerous if there are downed power lines.",
+    q15: "Over recent decades, possibly due to global climate change, hundred-year floods have been occurring worldwide with frightening regularity.",
+    q16: "Typically, flood processes are subdivided into three categories: ",
+    q17: "The drivers of flood risk are influenced by human and economic development, climate change, and disaster risk management.",
+    q18: "A large part of the population growth does not take place in flood-prone areas.",
+    q19: "Flood risk assessment needs to take into account the dynamic nature of risk, which is constantly changing due to socioeconomic growth, climate change-induced changes in rainfall and sea levels, and disaster risk management",
   },
   options: {
     q1: ['A flood with a lot of mud in it', 'A flood caused by runoff on farmland', 'A flood caused by a landslide'],
@@ -34,7 +48,19 @@ var trivia = {
     q4: ['3 inches (8 centimeters)', '6 inches (15 centimeters)', '1 foot (30 centimeters)'],
     q5: ['True','False'],
     q6: ['$2 billion','$4 billion','$6 billion','$8 billion'],
-    q7: ['1 foot', '2 feet', '3 feet','4 feet']
+    q7: ['1 foot', '2 feet', '3 feet','4 feet'],
+    q8: ['California, New York, Michigan','Nevada','None'],
+    q9: ['10 to 20 feet high','30 to 40 feet high','50 to 60 feet high'],
+    q10:['first aid items, non-perishable foods, battery operated, hygiene','beer, perishable foods, chargeable, belongings','gas, microwaveable foods, battery operated, picture frames'],
+    q11:['almost always','almost never', 'mandatorily'],
+    q12:['tomato juice','soap and disinfected water', 'water'],
+    q13:['low-lying areas','high ground areas','suburbs'],
+    q14:['True','False'],
+    q15:['True','False'],
+    q16:['coastal flooding, river flooding, and pluvial flooding.','floodplain flooding, flash flooding, water type.','flooding, overflow, torrent'],
+    q17:['True','False'],
+    q18:['True','False'],
+    q19:['True','False']
   },
   answers: {
     q1: 'A flood caused by runoff on farmland',
@@ -43,7 +69,19 @@ var trivia = {
     q4: '6 inches (15 centimeters)',
     q5: 'True',
     q6: '$8 billion',
-    q7: '2 feet'
+    q7: '2 feet',
+    q8: 'None',
+    q9: '10 to 20 feet high',
+    q10: 'first aid items, non-perishable foods, battery operated, hygiene',
+    q11: 'almost never',
+    q12: 'soap and disinfected water',
+    q13: 'low-lying areas',
+    q14: 'True',
+    q15: 'True',
+    q16: 'coastal flooding, river flooding, and pluvial flooding.',
+    q17: 'True',
+    q18: 'False',
+    q19: 'True'
   },
   
   //==========================
