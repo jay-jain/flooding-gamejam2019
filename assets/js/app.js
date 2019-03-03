@@ -201,7 +201,7 @@ var trivia = {
     
     // If the text of the option picked matches the answer of the current question, increment correct
     if($(this).text() === currentAnswer){
-      // turn button green for correct
+      // turn button green for correct answer
       $(this).addClass('btn-success').removeClass('btn-info');
       
       trivia.correct++;
@@ -214,7 +214,7 @@ var trivia = {
     }
     // User picks the wrong option; make wrong option red, and increment wrong answer var
     else{
-      // turn button clicked red for incorrect
+      // turn button clicked red for incorrect answer
       $(this).addClass('btn-danger').removeClass('btn-info');
       
       trivia.incorrect++;
