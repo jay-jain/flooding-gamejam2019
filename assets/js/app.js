@@ -6,8 +6,9 @@ $(document).ready(function(){
   $("#remaining-time").hide();
   $("#start").on('click', trivia.startGame);
   $(document).on('click' , '.option', trivia.guessChecker);
-  
-})
+  // $(document).on('click','.nextbutton',trivia.guessResult;
+  $("#nextb").on('click',trivia.guessResult); 
+});
 
 var trivia = {
   // trivia properties
@@ -140,9 +141,12 @@ var trivia = {
     $.each(questionOptions, function(index, key){
       $('#options').append($('<button class="option btn btn-info btn-lg">'+key+'</button>'));
     })
+
+
+
     
   },
-  // method to decrement counter and count unanswered if timer runs out
+  // Method to handle timer and count as unanswered if timer runs out before question is answered
   timerRunning : function(){
     // if timer still has time left and there are still questions left to ask
     if(trivia.timer > -1 && trivia.currentSet < Object.keys(trivia.questions).length){
@@ -152,7 +156,7 @@ var trivia = {
           $('#timer').addClass('last-seconds');
         }
     }
-    // the time has run out and increment unanswered, run result
+    // If time has run out, unanswered is incremented, run result
     else if(trivia.timer === -1){
       trivia.unanswered++;
       trivia.result = false;
@@ -162,7 +166,7 @@ var trivia = {
     }
     // if all the questions have been shown end the game, show results
     else if(trivia.currentSet === Object.keys(trivia.questions).length){
-      
+      $("#nextb").remove();
       // adds results of game (correct, incorrect, unanswered) to the page
       $('#results')
         .html('<h3>Thank you for playing!</h3>'+
@@ -188,14 +192,14 @@ var trivia = {
     // the answer to the current question being asked
     var currentAnswer = Object.values(trivia.answers)[trivia.currentSet];
     
-    // if the text of the option picked matches the answer of the current question, increment correct
+    // If the text of the option picked matches the answer of the current question, increment correct
     if($(this).text() === currentAnswer){
       // turn button green for correct
       $(this).addClass('btn-success').removeClass('btn-info');
       
       trivia.correct++;
       clearInterval(trivia.timerId);
-      resultId = setTimeout(trivia.guessResult, 1000);
+      //resultId = setTimeout(trivia.guessResult, 1000);
       $('#results').html('<h3>Correct Answer!</h3>');
     }
     // User picks the wrong option; make wrong option red, and increment wrong answer var
@@ -205,13 +209,16 @@ var trivia = {
       
       trivia.incorrect++;
       clearInterval(trivia.timerId);
-      resultId = setTimeout(trivia.guessResult, 1000);
+      //resultId = setTimeout(trivia.guessResult, 1000);
       $('#results').html('<h3>Better luck next time! The correct answer is:\n '+ currentAnswer +'</h3>');
-      //$('#next').html('<button class="btn btn-secondary btn-lg">');
+      $('#nextb').html('<button id="nextbutton" class="btn btn-primary btn-lg">Next Question</button>');
+      //$("#nextb").on('click',trivia.nextQuestion);
+      // $("#nextb").on('click',trivia.guessChecker);
+
     }
     
   },
-  // method to remove previous question results and options
+  // Method to remove previous question results and options.
   guessResult : function(){
     
     // increment to next question set
