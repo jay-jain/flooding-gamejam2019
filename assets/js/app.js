@@ -173,7 +173,7 @@ var trivia = {
     }
     // if all the questions have been shown end the game, show results
     else if(trivia.currentSet === Object.keys(trivia.questions).length){
-      $("#nextb").remove();
+      //$("#nextb").hide();
       // adds results of game (correct, incorrect, unanswered) to the page
       $('#results')
         .html('<h3>Thank you for playing!</h3>'+
